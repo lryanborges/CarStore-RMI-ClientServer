@@ -425,9 +425,15 @@ public class ProcessClient {
 		case 'S':
 		case 's':
 			Car purchased = gateway.buyCar(renavamToBuy);
-			System.out.println("Compra efetuada com sucesso.");
-			System.out.println("Carro: " + purchased.getRenavam());
-			myCars.add(purchased);
+			if(purchased != null) {
+				System.out.println("Compra efetuada com sucesso.");
+				System.out.println("Carro: " + purchased.getRenavam());
+				myCars.add(purchased);
+			} else {
+				System.out.println("------------------");
+				System.out.println("Já compraram esse carro enquanto você pensava.");
+			}
+			
 			break;
 		case 'N':
 		case 'n':
